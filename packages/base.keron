@@ -1,0 +1,7 @@
+# Base packages installed via Homebrew.
+
+val packages = ["git", "fd", "ripgrep", "rustup"]
+
+for name in packages {
+  reconcile brew(name)
+}
