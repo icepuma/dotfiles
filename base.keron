@@ -19,6 +19,7 @@ val brew_packages = [
   brew("infisical"),
   brew("intar-dev/stardrive/stardrive", "https://github.com/intar-dev/stardrive"),
   brew("jj"),
+  brew("just"),
   brew("k9s"),
   brew("mcfly"),
   brew("qemu"),
@@ -31,6 +32,7 @@ val brew_packages = [
   brew("tree"),
   brew("vhs"),
   brew("vim"),
+  brew("wasm-pack"),
 ]
 
 val cask_packages = [
@@ -44,7 +46,19 @@ val cask_packages = [
   cask("zed"),
 ]
 
-val cargo_packages = [cargo("cidrrr"), cargo("fbtoggl")]
+val cargo_packages = [
+  cargo("cargo-deny"),
+  cargo("cargo-edit"),
+  cargo("cargo-machete"),
+  cargo("cargo-mutants"),
+  cargo("cargo-nextest"),
+  cargo("cargo-release"),
+  cargo("cargo-zigbuild"),
+  cargo("cidrrr"),
+  cargo("cross"),
+  cargo("fbtoggl"),
+  cargo("versatiles"),
+]
 
 reconcile brew_packages
 reconcile cask_packages
