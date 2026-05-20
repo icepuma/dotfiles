@@ -1,0 +1,17 @@
+reconcile template(
+  source = "files/gpg.conf.tpl",
+  target = path_join(home_dir(), ".gnupg/gpg.conf"),
+  vars = {
+    "keyserver": "hkps://keys.openpgp.org",
+  },
+)
+
+reconcile template(
+  source = "files/gpg-agent.conf.tpl",
+  target = path_join(home_dir(), ".gnupg/gpg-agent.conf"),
+  vars = {
+    "pinentry_program": "/opt/homebrew/bin/pinentry-mac",
+  },
+)
+
+reconcile [brew("gnupg"), brew("pinentry-mac")]

@@ -1,7 +1,51 @@
-# Base packages installed via Homebrew.
+val brew_packages = [
+  brew("age"),
+  brew("ansible"),
+  brew("awscli"),
+  brew("bash"),
+  brew("bat"),
+  brew("bun"),
+  brew("cue"),
+  brew("cuenv/tap/cuenv"),
+  brew("d2"),
+  brew("doggo"),
+  brew("fd"),
+  brew("fnm"),
+  brew("fzf"),
+  brew("go"),
+  brew("hashicorp/tap/packer"),
+  brew("helm"),
+  brew("icepuma/nanite/nanite", "https://github.com/icepuma/nanite"),
+  brew("infisical"),
+  brew("intar-dev/stardrive/stardrive", "https://github.com/intar-dev/stardrive"),
+  brew("jj"),
+  brew("k9s"),
+  brew("mcfly"),
+  brew("qemu"),
+  brew("ripgrep"),
+  brew("rustup"),
+  brew("sccache"),
+  brew("sdkman/tap/sdkman-cli"),
+  brew("starship"),
+  brew("teleport"),
+  brew("tree"),
+  brew("vhs"),
+  brew("vim"),
+]
 
-val packages = ["git", "fd", "ripgrep", "rustup"]
+val cask_packages = [
+  cask("font-jetbrains-mono-nerd-font"),
+  cask("ghostty"),
+  cask("mullvad-vpn"),
+  cask("raycast"),
+  cask("steelseries-gg"),
+  cask("vivaldi"),
+  cask("vlc"),
+  cask("zed"),
+]
 
-for name in packages {
-  reconcile brew(name)
-}
+val cargo_packages = [cargo("cidrrr"), cargo("fbtoggl")]
+
+reconcile brew_packages
+reconcile cask_packages
+reconcile cargo_packages

@@ -1,0 +1,9 @@
+reconcile template(
+  source = "files/config.fish.tpl",
+  target = path_join(home_dir(), ".config/fish/config.fish"),
+  vars = {
+    "editor": "vim",
+  },
+)
+
+reconcile brew("fish")

@@ -1,0 +1,17 @@
+fn git_config(name: String, email: String): Template {
+  template(
+    source = "files/gitconfig.tpl",
+    target = path_join(home_dir(), ".gitconfig"),
+    vars = {
+      "name": name,
+      "email": email,
+    },
+  )
+}
+
+reconcile git_config(
+  name = "Stefan Ruzitschka",
+  email = "362487+icepuma@users.noreply.github.com",
+)
+
+reconcile brew("git")
